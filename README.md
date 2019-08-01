@@ -47,10 +47,10 @@ This repository assumes a working knowledge of:
 
 ### Run docker container
 
-1. :pencil2: Path to directory receiving downloaded files.  Example:
+1. :pencil2: Set environment variables.  Example:
 
     ```console
-    export SENZING_DOWNLOAD_DIR=/path/to/place/to/download
+    export SENZING_DOWNLOAD_DIR=/where/to/put/downloads
     ```
 
 1. Run the docker container.  Example:
