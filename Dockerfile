@@ -1,11 +1,11 @@
 ARG BASE_IMAGE=centos:7
 FROM ${BASE_IMAGE}
 
-ENV REFRESHED_AT=2019-08-01
+ENV REFRESHED_AT=2019-08-05
 
 LABEL Name="senzing/yumdownloader" \
       Maintainer="support@senzing.com" \
-      Version="1.1.0"
+      Version="1.3.0"
 
 HEALTHCHECK CMD ["/app/healthcheck.sh"]
 
