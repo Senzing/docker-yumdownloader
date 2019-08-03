@@ -11,7 +11,8 @@ A thin wrapper over
     1. [Space](#space)
     1. [Time](#time)
     1. [Background knowledge](#background-knowledge)
-1. [Demonstrate](#demonstrate)
+1. [Demonstrate using Docker](#demonstrate-using-docker)
+    1. [Get docker image](#get-docker-image)
     1. [Configuration](#configuration)
     1. [Run docker container](#run-docker-container)
 1. [Develop](#develop)
@@ -38,28 +39,45 @@ This repository assumes a working knowledge of:
 
 1. [Docker](https://github.com/Senzing/knowledge-base/blob/master/WHATIS/docker.md)
 
-## Demonstrate
+## Demonstrate using Docker
+
+### Get docker image
+
+1. Option #1. The `senzing/yumdownloader` docker image is on [DockerHub](https://hub.docker.com/r/senzing/yumdownloader) and can be downloaded.
+   Example:
+
+    ```console
+    sudo docker pull senzing/yumdownloader
+    ```
+
+1. Option #2. The `senzing/yumdownloader` image can be built locally.
+   Example:
+
+    ```console
+    sudo docker build --tag senzing/yumdownloader https://github.com/senzing/docker-yumdownloader.git
+    ```
 
 ### Configuration
 
-* **SENZING_DOWNLOAD_DIR** -
-  Path on the local system where downloaded RPM files will be placed.
+Configuration values specified by environment variable or command line parameter.
+
+- **[SENZING_DOWNLOAD_DIR](https://github.com/Senzing/knowledge-base/blob/master/lists/environment-variables.md#senzing_download_dir)**
 
 ### Run docker container
 
-1. :pencil2: Path to directory receiving downloaded files.  Example:
+1. :pencil2: Set environment variables.
+   Example:
 
     ```console
-    export SENZING_DOWNLOAD_DIR=/path/to/place/to/download
+    export SENZING_DOWNLOAD_DIR=/tmp
     ```
 
-1. Run the docker container.  Example:
+1. Run the docker container.
+   Example:
 
     ```console
     sudo docker run \
-      --interactive \
       --rm \
-      --tty \
       --volume ${SENZING_DOWNLOAD_DIR}:/download \
       senzing/yumdownloader
     ```
@@ -75,6 +93,9 @@ The following software programs need to be installed:
 1. [docker](https://github.com/Senzing/knowledge-base/blob/master/HOWTO/install-docker.md)
 
 ### Clone repository
+
+For more information on environment variables,
+see [Environment Variables](https://github.com/Senzing/knowledge-base/blob/master/lists/environment-variables.md).
 
 1. Set these environment variable values:
 
@@ -94,14 +115,20 @@ The following software programs need to be installed:
 
 ### Build docker image for development
 
-1. Option #1 - Using `docker` command and local repository.
+1. Option #1 - Using `docker` command and GitHub.
+
+    ```console
+    sudo docker build --tag senzing/yumdownloader https://github.com/senzing/docker-yumdownloader.git
+    ```
+
+1. Option #2 - Using `docker` command and local repository.
 
     ```console
     cd ${GIT_REPOSITORY_DIR}
     sudo docker build --tag senzing/yumdownloader .
     ```
 
-1. Option #2 - Using `make` command.
+1. Option #3 - Using `make` command.
 
     ```console
     cd ${GIT_REPOSITORY_DIR}
