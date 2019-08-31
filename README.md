@@ -5,8 +5,12 @@
 A thin wrapper over
 [yumdownloader](https://github.com/Senzing/knowledge-base/blob/master/WHATIS/yumdownloader.md).
 
-The docker image issues the command `yumdownloader --destdir /download senzingapi`
-to download the latest `senzingapi-M.m.p-xxxxx.x86_64.rpm` file.
+A running docker container downloads the latest `senzingapi-M.m.p-xxxxx.x86_64.rpm`
+file by running the following command:
+
+```console
+yumdownloader --destdir /download senzingapi
+```
 
 ### Contents
 
