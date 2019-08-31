@@ -5,6 +5,9 @@
 A thin wrapper over
 [yumdownloader](https://github.com/Senzing/knowledge-base/blob/master/WHATIS/yumdownloader.md).
 
+The docker image issues the command `yumdownloader --destdir /download senzingapi`
+to download the latest `senzingapi-M.m.p-xxxxx.x86_64.rpm` file.
+
 ### Contents
 
 1. [Expectations](#expectations)
@@ -12,7 +15,6 @@ A thin wrapper over
     1. [Time](#time)
     1. [Background knowledge](#background-knowledge)
 1. [Demonstrate using Docker](#demonstrate-using-docker)
-    1. [Get docker image](#get-docker-image)
     1. [Configuration](#configuration)
     1. [Run docker container](#run-docker-container)
 1. [Develop](#develop)
@@ -40,22 +42,6 @@ This repository assumes a working knowledge of:
 1. [Docker](https://github.com/Senzing/knowledge-base/blob/master/WHATIS/docker.md)
 
 ## Demonstrate using Docker
-
-### Get docker image
-
-1. Option #1. The `senzing/yumdownloader` docker image is on [DockerHub](https://hub.docker.com/r/senzing/yumdownloader) and can be downloaded.
-   Example:
-
-    ```console
-    sudo docker pull senzing/yumdownloader
-    ```
-
-1. Option #2. The `senzing/yumdownloader` image can be built locally.
-   Example:
-
-    ```console
-    sudo docker build --tag senzing/yumdownloader https://github.com/senzing/docker-yumdownloader.git
-    ```
 
 ### Configuration
 
