@@ -5,6 +5,13 @@
 A thin wrapper over
 [yumdownloader](https://github.com/Senzing/knowledge-base/blob/master/WHATIS/yumdownloader.md).
 
+A running docker container downloads the latest `senzingapi-M.m.p-xxxxx.x86_64.rpm`
+file by running the following command:
+
+```console
+yumdownloader --destdir /download senzingapi
+```
+
 ### Contents
 
 1. [Expectations](#expectations)
@@ -12,7 +19,6 @@ A thin wrapper over
     1. [Time](#time)
     1. [Background knowledge](#background-knowledge)
 1. [Demonstrate using Docker](#demonstrate-using-docker)
-    1. [Get docker image](#get-docker-image)
     1. [Configuration](#configuration)
     1. [Run docker container](#run-docker-container)
 1. [Develop](#develop)
@@ -41,27 +47,11 @@ This repository assumes a working knowledge of:
 
 ## Demonstrate using Docker
 
-### Get docker image
-
-1. Option #1. The `senzing/yumdownloader` docker image is on [DockerHub](https://hub.docker.com/r/senzing/yumdownloader) and can be downloaded.
-   Example:
-
-    ```console
-    sudo docker pull senzing/yumdownloader
-    ```
-
-1. Option #2. The `senzing/yumdownloader` image can be built locally.
-   Example:
-
-    ```console
-    sudo docker build --tag senzing/yumdownloader https://github.com/senzing/docker-yumdownloader.git
-    ```
-
 ### Configuration
 
 Configuration values specified by environment variable or command line parameter.
 
-- **[SENZING_DOWNLOAD_DIR](https://github.com/Senzing/knowledge-base/blob/master/lists/environment-variables.md#senzing_download_dir)**
+- **[SENZING_RPM_DIR](https://github.com/Senzing/knowledge-base/blob/master/lists/environment-variables.md#senzing_rpm_dir)**
 
 ### Run docker container
 
@@ -69,7 +59,7 @@ Configuration values specified by environment variable or command line parameter
    Example:
 
     ```console
-    export SENZING_DOWNLOAD_DIR=/tmp
+    export SENZING_RPM_DIR=~/Downloads
     ```
 
 1. Run the docker container.
@@ -78,7 +68,7 @@ Configuration values specified by environment variable or command line parameter
     ```console
     sudo docker run \
       --rm \
-      --volume ${SENZING_DOWNLOAD_DIR}:/download \
+      --volume ${SENZING_RPM_DIR}:/download \
       senzing/yumdownloader
     ```
 
@@ -102,16 +92,11 @@ see [Environment Variables](https://github.com/Senzing/knowledge-base/blob/maste
     ```console
     export GIT_ACCOUNT=senzing
     export GIT_REPOSITORY=docker-yumdownloader
-    ```
-
-1. Follow steps in [clone-repository](https://github.com/Senzing/knowledge-base/blob/master/HOWTO/clone-repository.md) to install the Git repository.
-
-1. After the repository has been cloned, be sure the following are set:
-
-    ```console
     export GIT_ACCOUNT_DIR=~/${GIT_ACCOUNT}.git
     export GIT_REPOSITORY_DIR="${GIT_ACCOUNT_DIR}/${GIT_REPOSITORY}"
     ```
+
+1. Follow steps in [clone-repository](https://github.com/Senzing/knowledge-base/blob/master/HOWTO/clone-repository.md) to install the Git repository.
 
 ### Build docker image for development
 
