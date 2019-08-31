@@ -61,7 +61,7 @@ This repository assumes a working knowledge of:
 
 Configuration values specified by environment variable or command line parameter.
 
-- **[SENZING_DOWNLOAD_DIR](https://github.com/Senzing/knowledge-base/blob/master/lists/environment-variables.md#senzing_download_dir)**
+- **[SENZING_RPM_DIR](https://github.com/Senzing/knowledge-base/blob/master/lists/environment-variables.md#senzing_rpm_dir)**
 
 ### Run docker container
 
@@ -69,7 +69,7 @@ Configuration values specified by environment variable or command line parameter
    Example:
 
     ```console
-    export SENZING_DOWNLOAD_DIR=/tmp
+    export SENZING_RPM_DIR=~/Downloads
     ```
 
 1. Run the docker container.
@@ -78,7 +78,7 @@ Configuration values specified by environment variable or command line parameter
     ```console
     sudo docker run \
       --rm \
-      --volume ${SENZING_DOWNLOAD_DIR}:/download \
+      --volume ${SENZING_RPM_DIR}:/download \
       senzing/yumdownloader
     ```
 
@@ -102,16 +102,11 @@ see [Environment Variables](https://github.com/Senzing/knowledge-base/blob/maste
     ```console
     export GIT_ACCOUNT=senzing
     export GIT_REPOSITORY=docker-yumdownloader
-    ```
-
-1. Follow steps in [clone-repository](https://github.com/Senzing/knowledge-base/blob/master/HOWTO/clone-repository.md) to install the Git repository.
-
-1. After the repository has been cloned, be sure the following are set:
-
-    ```console
     export GIT_ACCOUNT_DIR=~/${GIT_ACCOUNT}.git
     export GIT_REPOSITORY_DIR="${GIT_ACCOUNT_DIR}/${GIT_REPOSITORY}"
     ```
+
+1. Follow steps in [clone-repository](https://github.com/Senzing/knowledge-base/blob/master/HOWTO/clone-repository.md) to install the Git repository.
 
 ### Build docker image for development
 
