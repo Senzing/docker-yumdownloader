@@ -1,11 +1,11 @@
 ARG BASE_IMAGE=centos:7
 FROM ${BASE_IMAGE}
 
-ENV REFRESHED_AT=2019-09-31
+ENV REFRESHED_AT=2019-09-01
 
 LABEL Name="senzing/yumdownloader" \
       Maintainer="support@senzing.com" \
-      Version="1.0.0"
+      Version="1.1.0"
 
 HEALTHCHECK CMD ["/app/healthcheck.sh"]
 
@@ -24,4 +24,4 @@ COPY ./rootfs /
 VOLUME /download
 
 ENTRYPOINT ["yumdownloader", "--destdir", "/download"]
-CMD ["senzingapi"]
+CMD ["senzingapi", "senzingdata"]

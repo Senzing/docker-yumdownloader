@@ -5,11 +5,13 @@
 A thin wrapper over
 [yumdownloader](https://github.com/Senzing/knowledge-base/blob/master/WHATIS/yumdownloader.md).
 
-A running docker container downloads the latest `senzingapi-M.m.p-xxxxx.x86_64.rpm`
-file by running the following command:
+A running docker container downloads the latest
+`senzingapi-M.m.p-xxxxx.x86_64.rpm` and
+`senzingdata-M.m.p-xxxxx.x86_64.rpm`
+files by running the following command:
 
 ```console
-yumdownloader --destdir /download senzingapi
+yumdownloader --destdir /download senzingapi senzingdata
 ```
 
 ### Contents
@@ -119,6 +121,8 @@ see [Environment Variables](https://github.com/Senzing/knowledge-base/blob/maste
     cd ${GIT_REPOSITORY_DIR}
     sudo make docker-build
     ```
+
+    Note: `sudo make docker-build-development-cache` can be used to create cached docker layers.
 
 ## Examples
 
