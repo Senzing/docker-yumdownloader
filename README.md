@@ -14,6 +14,10 @@ files by running the following command:
 yumdownloader --destdir /download senzingapi senzingdata
 ```
 
+### Related artifacts
+
+1. [DockerHub](https://hub.docker.com/r/senzing/yumdownloader)
+
 ### Contents
 
 1. [Expectations](#expectations)
