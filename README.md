@@ -7,11 +7,11 @@ A thin wrapper over
 
 A running docker container downloads the latest
 `senzingapi-M.m.p-xxxxx.x86_64.rpm` and
-`senzingdata-M.m.p-xxxxx.x86_64.rpm`
+`senzingdata-v1-M.m.p-xxxxx.x86_64.rpm`
 files by running the following command:
 
 ```console
-yumdownloader --destdir /download senzingapi senzingdata
+yumdownloader --destdir /download senzingapi senzingdata-v1
 ```
 
 ### Related artifacts
@@ -106,20 +106,20 @@ see [Environment Variables](https://github.com/Senzing/knowledge-base/blob/maste
 
 ### Build docker image for development
 
-1. Option #1 - Using `docker` command and GitHub.
+1. **Option #1:** Using `docker` command and GitHub.
 
     ```console
     sudo docker build --tag senzing/yumdownloader https://github.com/senzing/docker-yumdownloader.git
     ```
 
-1. Option #2 - Using `docker` command and local repository.
+1. **Option #2:** Using `docker` command and local repository.
 
     ```console
     cd ${GIT_REPOSITORY_DIR}
     sudo docker build --tag senzing/yumdownloader .
     ```
 
-1. Option #3 - Using `make` command.
+1. **Option #3:** Using `make` command.
 
     ```console
     cd ${GIT_REPOSITORY_DIR}
