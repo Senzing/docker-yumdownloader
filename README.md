@@ -35,6 +35,14 @@ yumdownloader --destdir /download senzingapi senzingdata-v1
 1. [Errors](#errors)
 1. [References](#references)
 
+### Legend
+
+1. :thinking: - A "thinker" icon means that a little extra thinking may be required.
+   Perhaps you'll need to make some choices.
+   Perhaps it's an optional step.
+1. :pencil2: - A "pencil" icon means that the instructions may need modification before performing.
+1. :warning: - A "warning" icon means that something tricky is happening, so pay attention.
+
 ## Expectations
 
 ### Space
@@ -109,7 +117,9 @@ see [Environment Variables](https://github.com/Senzing/knowledge-base/blob/maste
 1. **Option #1:** Using `docker` command and GitHub.
 
     ```console
-    sudo docker build --tag senzing/yumdownloader https://github.com/senzing/docker-yumdownloader.git
+    sudo docker build \
+      --tag senzing/yumdownloader \
+      https://github.com/senzing/docker-yumdownloader.git
     ```
 
 1. **Option #2:** Using `docker` command and local repository.
