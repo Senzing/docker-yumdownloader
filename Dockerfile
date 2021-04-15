@@ -25,4 +25,4 @@ COPY ./rootfs /
 VOLUME /download
 
 ENTRYPOINT ["yumdownloader", "--destdir", "/download"]
-CMD ["senzingapi", "senzingdata-v1"]
+CMD ["senzingapi", "senzingdata-v2"]
