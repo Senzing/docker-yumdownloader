@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 [markdownlint](https://dlaa.me/markdownlint/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2021-04-15
+
+### Changed in 1.2.0
+
+- Change from `senzingdata-v2` to `senzingdata-v2`
+
 ## [1.1.2] - 2020-01-30
 
 ### Changed in 1.1.2
